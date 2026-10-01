@@ -18,12 +18,22 @@ export class LemonadeStand{
         ice: number,
         lemons: number,
         sugar: number,
-        totalCost: number
-    ): void{
+        cupPrice: number,
+        icePrice: number,
+        lemonPrice: number,
+        sugarPrice: number
+    ): void {
+        const totalCost =
+            cups * cupPrice +
+            ice * icePrice +
+            lemons * lemonPrice +
+            sugar * sugarPrice;
+
         this.cups += cups;
         this.ice += ice;
         this.lemons += lemons;
         this.sugar += sugar;
-        this.cash += totalCost;
+
+        this.cash -= totalCost;
     }
 }
